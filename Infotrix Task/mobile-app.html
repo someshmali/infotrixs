@@ -1,0 +1,766 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        /* Basic CSS for the navigation bar */
+        .blocking-app-section {
+            background-image: url('URL-TO-YOUR-BACKGROUND-IMAGE');
+            /* Replace with the actual URL of your background image */
+            background-size: cover;
+            background-repeat: no-repeat;
+            /* You can also adjust other CSS properties like background-position if needed */
+        }
+
+        ul.navbar {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            background-color: #007BFF;
+            overflow: hidden;
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 1000;
+            display: flex;
+            justify-content: space-between;
+            /* Spread items horizontally */
+            align-items: center;
+            /* Vertically align items to the center */
+        }
+
+
+        ul.navbar .left {
+            display: flex;
+            margin-left: -1%;
+            /* Adjust the left margin as needed */
+        }
+
+
+        ul.navbar .left li {
+            margin-left: 20px;
+            /* Adjust the left margin between items as needed */
+        }
+
+        ul.navbar .right {
+            margin-right: 20px;
+            /* Adjust the right margin as needed */
+        }
+
+
+        ul.navbar .right a.rounded-button {
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            cursor: pointer;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: bold;
+        }
+
+
+        ul.navbar .right a.download-button {
+            background-color: #68b685;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            cursor: pointer;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: bold;
+        }
+
+        li.right-content {
+            margin-right: 2px;
+        }
+
+
+        ul.navbar li {
+            float: left;
+            margin: 0;
+            padding: 0;
+        }
+
+        ul.navbar li a {
+            display: block;
+            color: white;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+            margin: 0;
+            transition: background-color 0.3s, color 0.3s;
+        }
+
+        ul.navbar li a:hover {
+            background-color: #d39698;
+            color: rgb(255, 255, 255);
+            border: 1px solid #0000FF;
+        }
+
+        /* CSS for the text below the navigation bar */
+        .text-container {
+            margin-top: 100px;
+            /* Set margin-top to 60% of the viewport height */
+            text-align: left;
+            /* Align text to the left */
+            padding-left: 2%;
+            position: relative;
+            /* Add relative positioning for stacking */
+            z-index: 999;
+            /* Ensure text appears above other content */
+        }
+
+        /* CSS for the larger text */
+        .larger-text {
+            font-size: 350%;
+            /* Increase font size to 320% */
+            font-weight: bold;
+        }
+
+        /* CSS for the right side content */
+        .right-content {
+            display: flex;
+            align-items: self-end;
+            width: -50px;
+        }
+
+        /* CSS for the "Sign Up" button */
+        .signup-button {
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            cursor: pointer;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: bold;
+            margin-right: -100px;
+            /* justify-content:flex-end; */
+            /* Add margin to separate the buttons */
+        }
+
+        /* CSS for the "Download" button */
+        .download-button {
+            background-color: #68b685;
+            /* background-color: #68b685; */
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            cursor: pointer;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: bold;
+            /* Add margin to separate the buttons */
+        }
+
+
+        .image-container {
+            float: right;
+            /* Float the image to the right side */
+            margin-right: 80px;
+            margin-top: -15%;
+            /* Add some space between the text and the image */
+        }
+
+        .small-image {
+            width: 400px;
+            height: auto;
+        }
+
+        /* Initially hide the image */
+
+
+
+        /* Set margin-left to auto to push the buttons to the right */
+        /* ul.navbar li.right-content {
+    margin-left: auto;
+} */
+
+        /* CSS for the "En" text */
+        .language-text {
+            color: white;
+            text-decoration: none;
+            margin-right: 10px;
+            font-weight: bold;
+        }
+
+        /* Add more space between Contact Us and Sign Up */
+        .contact-us {
+            margin-right: 50%;
+            /* Adjust the margin as needed */
+        }
+
+        /* CSS for the search box and icon */
+        .search-container {
+            display: flex;
+            align-items: center;
+        }
+
+        .search-box {
+            padding: 30px;
+            border: 2px solid #ccc;
+            border-radius: 40px;
+            /* Add border radius */
+            min-width: 30%;
+            /* Set minimum width to 50% */
+            margin-right: 50px;
+            position: relative;
+            background-color: rgb(255, 255, 255);
+            /* Add position:relative to the search box */
+            display: flex;
+            align-items: center;
+        }
+
+        .search-box input {
+            border: none;
+            /* Remove input border */
+            outline: none;
+            /* Remove input outline */
+            width: 100%;
+            /* Make the input take up the full width */
+            text-align: left;
+            /* Center-align the text within the input field */
+            margin-left: 10px;
+            /* Add margin to move the input to the left */
+        }
+
+        .search-icon {
+            font-size: 20px;
+            color: #fffefe;
+            background-color: rgb(68, 154, 253);
+            position: absolute;
+            /* Position the search icon absolutely */
+            right: 13px;
+            /* Move the icon to the left */
+            border: 1px solid #333;
+            /* Add a border around the icon */
+            padding: 20px;
+            /* Add padding to the icon */
+            border-radius: 50%;
+            /* Make the border circular */
+        }
+
+        .additional-text {
+            margin-left: 10px;
+            /* Add margin to create space */
+            color: #333;
+        }
+
+        /* CSS for the section containing Blocking App */
+        .blocking-app-section {
+            text-align: center;
+            margin-top: 100px;
+            /* Increase the margin to create more space */
+            margin-left: 50px;
+            /* Add space between the text and search box */
+            position: relative;
+            z-index: 999;
+        }
+
+        /* Hide text-container and blocking-app-section when scrolling down */
+        .hide-on-scroll {
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.5s;
+        }
+
+        /* Reveal text-container and blocking-app-section when scrolling up */
+        .reveal-on-scroll {
+            opacity: 1;
+            pointer-events: auto;
+            transition: opacity 0.5s;
+        }
+
+        /* Center-align the "What we do" headline */
+        .what-we-do {
+            text-align: center;
+            /* Center-align the text */
+            margin-top: 140px;
+            /* Adjust the margin as needed */
+        }
+
+        /* CSS for the circle container */
+        .circle-container {
+            text-align: center;
+            margin-top: 50px;
+            /* Adjust the margin as needed */
+        }
+
+        /* CSS for the individual circles */
+        .circle {
+            width: 150px;
+            /* Set the width and height of the circle */
+            height: 150px;
+            background-color: #ffffff;
+            /* Change the circle's background color */
+            border-radius: 50%;
+            /* Make the circle round */
+            display: inline-block;
+            margin: 79px;
+            /* Adjust the margin to increase space between circles */
+            overflow: hidden;
+            /* Hide overflow content outside the circle */
+            position: relative;
+            /* Create a positioning context for images */
+        }
+
+        /* CSS for the circle content (including the heading and description) */
+        .circle-content {
+            text-align: center;
+            padding-top: 100px;
+            /* Add padding to separate heading and description */
+        }
+
+        /* CSS for the heading inside the circle */
+        .circle-content h2 {
+            color: white;
+            /* Set the heading text color */
+            font-size: 18px;
+            /* Set the heading font size */
+            margin: 10px 0;
+            /* Add margin to style the heading */
+        }
+
+        /* CSS for the description inside the circle */
+        .circle-content p {
+            color: rgb(224, 28, 28);
+            /* Set the description text color */
+            font-size: 14px;
+            /* Set the description font size */
+            margin: 10px 0;
+            /* Add margin to style the description */
+        }
+
+        /* CSS for the images inside the circles */
+        .circle img {
+            max-width: 100%;
+            max-height: 100%;
+            width: auto;
+            height: auto;
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            margin: auto;
+        }
+
+        /* CSS for the circle features */
+        .circle-features {
+            width: 150px;
+            /* Set the width and height of the circle */
+            height: 150px;
+            display: inline-block;
+            margin: 0;
+            /* Adjust the margin to create space */
+            position: relative;
+            /* Create a positioning context for text */
+            text-align: center;
+            /* Center-align the text */
+            margin-top: 50%;
+            /* Maintain 50% distance */
+        }
+
+        /* CSS for the circle heading in the features section */
+        .circle-features .circle-heading {
+            color: white;
+            /* Set the heading text color */
+            font-size: 18px;
+            /* Set the heading font size */
+            margin: 10px 0;
+            /* Add margin to style the heading */
+        }
+
+        /* CSS for the circle description in the features section */
+        .circle-features .circle-description {
+            color: rgb(207, 75, 75);
+            /* Set the description text color */
+            font-size: 14px;
+            /* Set the description font size */
+            margin: 10px 0;
+            /* Add margin to style the description */
+        }
+
+        /* CSS for the text below the circle container */
+        .text-below-circles {
+            text-align: center;
+            margin-top: 50px;
+            /* Adjust the margin as needed */
+        }
+
+        /* You can style this text as needed */
+        .text-below-circles h2 {
+            font-size: 24px;
+            color: #000000;
+        }
+
+        .text-below-circles p {
+            font-size: 18px;
+            color: #000000;
+        }
+
+        /* CSS for the image content */
+        .text-below-circles .image-content {
+            flex: 1;
+            text-align: right;
+        }
+
+        /* CSS for the image size (adjust as needed) */
+        .text-below-circles .image-content img {
+            max-width: 100%;
+            height: auto;
+        }
+
+
+
+        /* CSS for the flex container */
+        .flex-container {
+            display: flex;
+            justify-content: space-between;
+            /* Place content at each end of the container */
+            align-items: center;
+            /* Vertically align content in the middle */
+        }
+
+        /* CSS for the image on the left side */
+        /* .image-content img {
+    max-width: 50%;
+    max-height: 40%;
+} */
+
+        /* CSS for the text content on the right side */
+        .text-content {
+            flex: 1;
+            /* Allow the text content to expand and take up remaining space */
+            margin-left: 20px;
+            max-width: 200%;
+            max-height: 200%;
+            /* Adjust the margin as needed */
+        }
+
+        /* In your CSS file */
+        .enlarged-image {
+            max-width: 170% !important;
+            max-height: 170% !important;
+        }
+
+
+
+
+
+
+        /* CSS for changing the link color when scrolling up */
+        .scroll-up-color {
+            color: #0000FF;
+            /* Change to your desired color */
+            transition: color 0.3s;
+            /* Add a smooth color transition effect */
+        }
+
+
+
+        /* Set the background image for the body element */
+        body {
+            background-image: url('C:\Users\somesh mali\OneDrive\Pictures\boyimage.jpg');
+            /* Replace 'background.jpg' with the actual image path */
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            /* Keep the background fixed while scrolling */
+            /* You can also adjust other background properties like background-position if needed */
+        }
+    </style>
+</head>
+
+<body>
+    <ul class="navbar">
+        <div class="left">
+            <li><a href="#audiocall" style="font-family: 'YourFontName', sans-serif;">Audiocall</a></li>
+
+            <li><a href="Aboutus.html">About us</a></li>
+            <li><a href="#what-we-do">Features</a></li>
+            <li><a href="privacy.html">Privacy</a></li>
+            <li><a href="help.html">Help</a></li>
+
+        </div>
+        <div class="right">
+            <a href="login.html" class="rounded-button">Login</a>
+            <a href="https://play.google.com/store/apps/details?id=com.truecaller" class="download-button">Download</a>
+        </div>
+    </ul>
+
+
+
+    <!-- Text below the navigation bar -->
+
+    <!-- If you want to delay the display of the mobile hold image, you can achieve this using CSS and a bit of JavaScript. You can initially hide the image and then use JavaScript to reveal it after a specified delay. Here's how you can do it: -->
+
+
+    <div class="backgroundimg">
+        <div class="text-container reveal-on-scroll">
+            <div class="larger-text" style="text-align: left;">The World’s Best</div>
+            <div class="larger-text" style="text-align: left;">Caller ID and Spam</div>
+            <div class="larger-text" style="text-align: left;">Blocking App</div>
+        </div>
+        <div class="image-container">
+            <img src="C:\Users\somesh mali\OneDrive\Pictures\holdingmobileimage.jpg" alt="Small Image"
+                class="small-image grayscale">
+        </div>
+    </div>
+
+
+    <!-- Search box and icon below Blocking App -->
+    <div class="blocking-app-section reveal-on-scroll">
+        <div class="search-container">
+            <div class="search-box">
+                <div class="additional-text">+91</div>
+                <input type="text" placeholder="Enter your number">
+                <i class="fa fa-search search-icon"></i>
+            </div>
+        </div>
+    </div>
+    </div>
+
+
+
+
+    <!-- Add four big circles with text below each image -->
+    <div id="what-we-do" style="height: 2000px; background-color: #f2f2f2;">
+        <h1 class="what-we-do" style="margin-bottom: -5%; z-index: -1;">Features</h1>
+        <div class="circle-container">
+            <div class="circle">
+                <div class="circle-content">
+                    <img src="https://tc-main.cdn.prismic.io/tc-main/eeeec38a-70cf-4e22-b99f-4a755301dac6_1_trusted_caller_id_app.svg"
+                        alt="Image 1">
+                </div>
+
+            </div>
+            <div class="circle">
+                <div class="circle-content">
+                    <img src="C:\Users\somesh mali\OneDrive\Pictures\second-images.webp" alt="Image 2">
+
+                </div>
+            </div>
+            <div class="circle">
+                <div class="circle-content">
+                    <img src="C:\Users\somesh mali\OneDrive\Pictures\third-images.png" alt="Image 3">
+
+                </div>
+            </div>
+            <div class="circle">
+                <div class="circle-content">
+                    <img src="C:\Users\somesh mali\OneDrive\Pictures\fourth-image.png" alt="Image 4">
+
+                </div>
+            </div>
+        </div>
+        <p style="font-size: 17px; font-weight: bold; margin-left: 4%; margin-top: -6%;">#1 trusted Caller ID app</p>
+        <!-- <h6>Trusted and used by over 356 million people to identify calls and SMS from around the world.<h6> -->
+        <p style="font-size: 17px; font-weight: bold; margin-left: 26%; margin-top: -37px;">Community-based spam
+            reporting</p>
+        <p style="font-size: 17px; font-weight: bold; margin-left: 55%; margin-top: -37px;">Auto-block spam calls and
+            SMS</p>
+        <p style="font-size: 17px; font-weight: bold; margin-left: 83%; margin-top: -37px;">Safe and efficient
+            communicatio­n</p>
+
+
+
+
+
+
+        <!-- Text section below circle-container -->
+        <!-- Text section below circle-container -->
+        <div class="text-below-circles" style="margin-top: 15%; margin-left: -35%;">
+            <div class="text-content">
+
+                <h2 style="color: rgb(8, 65, 135); margin-bottom: -3%; margin-right: 24%;">FEATURES</h2>
+                <p style="font-size: 45px; font-weight: bold; margin-left: -2%; margin-bottom: -3%;">Trust your
+                    communication</p>
+                <p style="font-size: 45px; font-weight: bold; margin-left: -15%;">with Truecaller</p>
+                <p style="color: rgb(0, 0, 0); margin-top: -2%; margin-left: 4%;">Truecaller is proud to be a leader in
+                    caller ID and spam blocking software as well as</p>
+                <p style="color: rgb(0, 0, 0); margin-top: -1%; margin-right: 13%;">research around call and SMS
+                    harassment.</p>
+            </div>
+            <div class="image-content" style="margin-right: 10%;">
+                <img src="C:\Users\somesh mali\OneDrive\Pictures\mobile-images.png" alt="Feature Image"
+                    style="max-width: 18%; max-height: 550px; margin-top:-17%;">
+            </div>
+        </div>
+
+
+        <div style="height: 650px; background-color: #d7ebf2;">
+            <h1 class="what-we-do" style="margin-top: 0%; display: block; color: #d7ebf2;">What we Do</h1>
+
+
+
+
+
+            <!-- Text section below circle-container -->
+            <!-- Text section below circle-container -->
+            <div class="text-below-circles" style="margin-top: 15%; margin-left: -35%;">
+                <div class="text-content">
+                    <h2 style="color: rgb(8, 65, 135); margin-bottom: -1%; margin-right: 24%;">IPHONE</h2>
+                    <p style="font-size: 45px; font-weight: bold; margin-right: 17%; margin-bottom: -3%;">Caller ID on
+                    </p>
+                    <p style="font-size: 45px; font-weight: bold; margin-left: -15%;margin-bottom: -15px;">iPhone is now
+                    </p>
+                    <p style="font-size: 45px; font-weight: bold; margin-right: 19%; margin-top: 3px;">10x better.</p>
+                    <p style="color: rgb(0, 0, 0); margin-top: -2%; margin-right: 11%;">Truecaller's iPhone app has been
+                        completely re-</p>
+                    <p style="color: rgb(0, 0, 0); margin-top: -1%; margin-right: 12%;">written from the ground up to be
+                        lighter, more.</p>
+                    <p style="color: rgb(0, 0, 0); margin-top: -1%; margin-right: 10%;">efficient, but most important of
+                        all, 10 times better</p>
+                    <p style="color: rgb(0, 0, 0); margin-top: -1%; margin-right: 13%;">spam, scam and business call
+                        identificati­on</p>
+                    <p style="color: rgb(0, 0, 0); margin-top: -1%; margin-right: 13%;">compared to previous versions of
+                        the app.</p>
+
+                    <!-- Add a button at the bottom -->
+                    <button
+                        style=" color: rgb(24, 27, 227); padding: 15px 0px 15px; width: 10%; height:20% ;border: 1px solid blue; cursor: pointer; border-radius: 20px; font-weight: bold; margin-right: 290px;">Learn
+                        More</button>
+                </div>
+                <div class="image-content" style="margin-right: 10%;">
+                    <img src="C:\Users\somesh mali\OneDrive\Pictures\hand_on_mobile_img.png" alt="Feature Image"
+                        style="max-width: 35%; max-height: 550px; margin-top: -27%;">
+                </div>
+            </div>
+
+
+
+            <!-- Your existing HTML for the third page -->
+            <div style="height: 500px; background-color: #f2f2f2;">
+                <!-- <h1 class="what-we-do" style="margin-top: 10%;">IMPACT</h1> -->
+                <div class="text-below-circles" style="margin-top: 15%; margin-left: -35%;">
+                    <!-- Flex container to arrange content in a row -->
+                    <div class="flex-container">
+                        <!-- Left side: Image -->
+                        <div class="image-content">
+                            <img src="C:\Users\somesh mali\OneDrive\Pictures\secondgirl-img.jpg" alt="Feature Image"
+                                style="min-width: 450px;">
+                        </div>
+                        <!-- Right side: Text content -->
+                        <div class="text-content">
+                            <h2 style="color: rgb(8, 65, 135); margin-bottom: -3%; margin-right: 45%;">IMPACT</h2>
+                            <p style="font-size: 45px; font-weight: bold; margin-left: -15%; margin-bottom: -5%;">Making
+                                an Impact</p>
+                            <p style="font-size: 45px; font-weight: bold; margin-left: -15%;">through Truecaller.</p>
+                            <p style="color: rgb(0, 0, 0); margin-top: -5%; margin-left: 4%;">Truecaller was created to
+                                identify who was calling, but today it is being</p>
+                            <p style="color: rgb(0, 0, 0); margin-top: -2%; margin-right: 22%;">used to fight crime, and
+                                help loved ones.</p>
+                            <button
+                                style=" color: rgb(24, 27, 227); padding: 15px 0px 15px; width: 14%; height:20% ;border: 1px solid blue; cursor: pointer; border-radius: 20px; font-weight: bold; margin-right: 360px;">Read
+                                More</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+
+
+            <!-- Existing code below this line -->
+
+            <script>
+                // JavaScript to control scroll reveal effect
+                var prevScrollPos = window.pageYOffset;
+                window.onscroll = function () {
+                    var currentScrollPos = window.pageYOffset;
+                    if (prevScrollPos > currentScrollPos) {
+                        // Scrolling up, reveal hidden elements
+                        document.querySelector('.text-container').classList.add('reveal-on-scroll');
+                        document.querySelector('.blocking-app-section').classList.add('reveal-on-scroll');
+                    } else {
+                        // Scrolling down, hide elements
+                        document.querySelector('.text-container').classList.remove('reveal-on-scroll');
+                        document.querySelector('.blocking-app-section').classList.remove('reveal-on-scroll');
+                    }
+                    prevScrollPos = currentScrollPos;
+                }
+            </script>
+
+            <!-- JavaScript for changing the color of the "Audiocall" link when scrolling up -->
+            <!-- JavaScript for changing the color of the "Audiocall" link when scrolling up -->
+            <!-- JavaScript for changing the color of the "Audiocall" link when scrolling up -->
+
+            <script>
+                var audiocallLink = document.querySelector('.scroll-up-color');
+                var isScrollingUp = false;
+
+                window.addEventListener('scroll', function () {
+                    var currentScrollPos = window.pageYOffset;
+
+                    if (currentScrollPos < 10) {
+                        // Reset to default color when at the top of the page
+                        audiocallLink.style.color = '';
+                    } else if (!isScrollingUp && currentScrollPos > 10) {
+                        // Scrolling down, change the color
+                        audiocallLink.style.color = '#0000FF';
+                        isScrollingUp = true;
+                    } else if (isScrollingUp && currentScrollPos <= 10) {
+                        // Scrolling up, reset the color
+                        audiocallLink.style.color = '';
+                        isScrollingUp = false;
+                    }
+                });
+            </script>
+
+
+            <script>
+                // Get a reference to the "Features" link
+                var featuresLink = document.querySelector('a[href="#what-we-do"]');
+
+                // Add a click event listener to the "Features" link
+                featuresLink.addEventListener('click', function (e) {
+                    e.preventDefault(); // Prevent the default behavior of anchor links
+
+                    // Get the position (offset) of the "What we Do" section
+                    var whatWeDoSection = document.getElementById('what-we-do');
+                    var offsetTop = whatWeDoSection.offsetTop;
+
+                    // Scroll to the "What we Do" section with smooth behavior
+                    window.scrollTo({
+                        top: offsetTop,
+                        behavior: 'smooth'
+                    });
+                });
+            </script>
+
+            <script>
+                // Function to check if an element is in the viewport
+                function isElementInViewport(element) {
+                    const rect = element.getBoundingClientRect();
+                    return (
+                        rect.top >= 0 &&
+                        rect.left >= 0 &&
+                        rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
+                        rect.right <= (window.innerWidth || document.documentElement.clientWidth)
+                    );
+                }
+
+                // Function to add a class when an element is in the viewport
+                function handleScroll() {
+                    const element = document.querySelector('.image-container');
+                    if (isElementInViewport(element)) {
+                        element.classList.add('zoom-in');
+                    }
+                }
+
+                // Attach the scroll event listener
+                window.addEventListener('scroll', handleScroll);
+
+                // Initial check when the page loads
+                handleScroll();
+            </script>
+
+
+
+
+</body>
+
+</html>
+
+      

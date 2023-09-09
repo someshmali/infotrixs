@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        /* Reset some default styles */
+        body, h1, h2, h3, p, ul, li {
+            margin: 0;
+            padding: 0;
+            background-color: #f2f2f2;
+            /* height: 1080px; */
+        }
+
+        /* Style the navbar */
+        .navbar {
+            background-color: #ffffff;
+            color: rgb(131, 199, 255);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 20px;
+            position: fixed;
+            width: 98%;
+            top: 0%;
+            z-index: 1000;
+        }
+
+        /* Style the left side of the navbar */
+        .left {
+            flex-grow: 1; /* Allow this section to grow and take up available space */
+        }
+
+        .left a {
+            text-decoration: none;
+            color: rgb(150, 197, 251);
+            margin-right: 20px;
+            font-size: x-large;
+        }
+
+        /* Style the right side of the navbar */
+        .right {
+            display: flex;
+            gap: 10px;
+        }
+
+        /* Style the rounded buttons */
+        .rounded-button {
+            background-color: #007BFF;
+            color: white;
+            border: none;
+            border-radius: 20px; /* Add rounded corners */
+            padding: 10px 20px;
+            cursor: pointer;
+        }
+
+        /* Hover effect for buttons */
+        .rounded-button:hover {
+            background-color: #0056b3;
+        }
+
+        .search-container {
+            display: flex;
+            flex-direction: column; /* Arrange items in a column */
+            align-items: center;
+            margin-top: 2%;
+        }
+
+        .search-box {
+            padding: 17px;
+            border: 2px solid #ccc;
+            border-radius: 20px;
+            min-width: 45%;
+            margin: 0 auto;
+            position: relative;
+            background-color: rgb(255, 255, 255);
+            display: flex;
+            align-items: center;
+        }
+
+        .search-box input {
+            border: none;
+            outline: none;
+            width: 100%;
+            text-align: left;
+            margin-left: 45px;
+        }
+
+        .search-icon {
+            font-size: 20px;
+            color: #ad9898;
+            position: absolute;
+            left: 13px;
+            padding: 20px;
+            border-radius: 50%;
+        }
+
+        .additional-text {
+            margin-left: 10px;
+            color: #333;
+        }
+
+        /* Style for the buttons at the bottom of the search box */
+        .search-buttons {
+            display: flex;
+            justify-content: flex-end;
+            margin-top: -53px;
+            margin-left: 60%;
+        }
+
+        /* Style for the three boxes below the search box */
+        .box-container {
+            display: flex;
+            justify-content: space-between;
+            margin-top:100px;
+            padding: 0 10%;
+            max-width:70%;
+            margin-left: 8%;
+            
+        }
+
+        .box {
+            background-color: #fff;
+            /* border: 2px solid #ccc; */
+            border-radius: 10px;
+            padding: 70px;
+            flex-grow: 1;
+            margin: 0 10px;
+            text-align: center;
+            /* max-height:70%; */
+        }
+
+        /* ... (previous CSS rules) ... */
+
+        /* Increase button size */
+        .roundeds-button {
+            background-color: #007BFF;
+            color: white;
+            border: none;
+            border-radius: 7px;
+            padding: 15px 30px; /* Increase padding for height and width */
+            font-size: 110%; /* Increase font size */
+            cursor: pointer;
+        }
+
+
+        .box-image {
+        /* padding-top: px; */
+    max-width: 90%; /* Set the maximum width of the image */
+    max-height: 150px; /* Set the maximum height of the image */
+}
+        /* ... (previous CSS rules) ... */
+    </style>
+</head>
+<body>
+<nav class="navbar">
+    <div class="left">
+        <a href="mobile-app.html">Audiocall</a>
+    </div>
+    <div class="right">
+        <button class="rounded-button">Submit Ticket</button>
+        <button class="rounded-button">Add Ticket</button>
+        <button class="rounded-button" onclick="openLoginPage()">Login</button>
+    </div>
+</nav>
+
+<div>
+    <h1 style="text-align: center; margin-top: 10%;">How can we help you today?</h1>
+</div>
+
+<div class="blocking-app-section reveal-on-scroll">
+    <div class="search-container">
+        <div class="search-box">
+            <input type="text" placeholder="Enter your search term here....">
+            <i class="fa fa-search search-icon"></i>
+        </div>
+        <!-- Buttons placed at the bottom of the search box -->
+        <div class="search-buttons">
+            <button class="roundeds-button">Search</button>
+        </div>
+    </div>
+
+    <!-- Three boxes below the search box -->
+<div class="box-container">
+    <div class="box">
+        <img src="C:\Users\somesh mali\OneDrive\Pictures\solution icon.png" alt="Image 1" class="box-image">
+         <h2>Solutions</h2>
+        <p>Content for Box 1</p>
+    </div>
+    <div class="box">
+        <img src="C:\Users\somesh mali\OneDrive\Pictures\contact us.png" alt="Image 2" class="box-image">
+         <h2>Contact us</h2>
+        <p>Content for Box 2</p>
+    </div>
+    <div class="box">
+        <img src="C:\Users\somesh mali\OneDrive\Pictures\my tickets.png" alt="Image 3" class="box-image">
+         <h2 style="margin-top: 14%;">my tickets</h2>
+        <p>Content for Box 3</p>
+    </div>
+</div>
+
+<div>
+   <h1 style="margin-top: 10%; color:#f2f2f2 ;">tis is one</h1>
+
+    </div>
+
+
+<script>
+    function openLoginPage() {
+        window.location.href = "login.html"; // Replace "login.html" with the actual URL of your login page
+    }
+</script>
+</body>
+</html>
